@@ -17,6 +17,14 @@
     
         <button type="submit" name="envio">Registrar</button>
     </form>';
+    echo'<br /> 
+      <form method="post" action=""> 
+        <input type="submit" value="Introducir Nuevo empleado" name="volver" >
+      </form>  ';
+      if(isset($_POST['volver'])){
+        header("Location: index.php");
+      }    
+    }
     }
   ?>  
 <!doctype html>
