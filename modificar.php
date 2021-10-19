@@ -18,6 +18,13 @@
     
         <button type="submit" name="envio">Registrar</button>
     </form>';
+    echo'<br /> 
+        <form method="post" action=""> 
+        <input type="submit" value="Volver al inicio" name="volver" >
+        </form>  ';
+      if(isset($_POST['volver'])){
+        header("Location: index.php");
+      }
     }
   ?>  
 <!doctype html>
@@ -41,15 +48,15 @@
       $telef= '"'.$_POST["telef"].'"';
       $consulta = 'insert into empleados values('.$dni.','.$nombre.','.$dni.','.$telef.')';
       echo $consulta;
-      $resultado = $mysqli->query($consulta);
+      //$resultado = $mysqli->query($consulta);
       echo'<br /> 
         <form method="post" action=""> 
-        <input type="submit" value="Introducir Nuevo empleado" name="volver" >
+        <input type="submit" value="Volver al inicio" name="volver" >
         </form>  ';
       if(isset($_POST['volver'])){
         header("Location: index.php");
-      }    
-    }
+      }
+    
     }else{
         form();
     }

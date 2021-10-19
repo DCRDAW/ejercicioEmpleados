@@ -19,15 +19,15 @@
         while($fila = $resultado->fetch_assoc()) {
         
         echo "id: " . $fila["idEmpleado"]. " - Nombre: " . $fila["nombre"]. " dni " . $fila["dni"]." - telefono: " . $fila["telefono"]; 
-        echo ' <a href="borrar.php ?id='.$fila["dni"].'">Borrar</a>';
-        echo ' <a href="modificar.php ?id='.$fila["dni"].'">modificar</a>';
+        echo ' <a href="borrar.php ?id='.$fila["idEmpleado"].'">Borrar</a>';
+        echo ' <a href="modificar.php ?id='.$fila["idEmpleado"].'">modificar</a>';
         echo "<br>";
         }
       }
       echo '</p>';
       echo' 
       <form method="post" action=""> 
-        <input type="submit" value="Introducir Nuevo empleado" name="volver" >
+        <input type="submit" value="Volver al inicio" name="volver" >
       </form>  ';
       if(isset($_POST['volver'])){
         header("Location: index.php");
