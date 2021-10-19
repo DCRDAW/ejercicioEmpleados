@@ -11,9 +11,10 @@
 <?php
     $mysqli = new mysqli('localhost', 'root', '', 'empleados');
     $consulta = 'SELECT * FROM empleados';
-    echo $consulta;
+    //echo $consulta;
     $resultado = $mysqli->query($consulta);
     //$fila = $resultado ->fetch_array();
+    echo '<p>';
     if ($resultado->num_rows > 0) {   
         while($fila = $resultado->fetch_assoc()) {
         
@@ -23,6 +24,7 @@
         echo "<br>";
         }
       }
+      echo '</p>';     
   ?>
 </body>
 
