@@ -42,9 +42,14 @@
       $consulta = 'insert into empleados values('.$dni.','.$nombre.','.$dni.','.$telef.')';
       echo $consulta;
       $resultado = $mysqli->query($consulta);
-        echo'<form  action="">
-          <input type="submit" value="volver a buscar" onclick="window.location.reload()">
-          </form>';
+      echo'<br /> 
+        <form method="post" action=""> 
+        <input type="submit" value="Introducir Nuevo empleado" name="volver" >
+        </form>  ';
+      if(isset($_POST['volver'])){
+        header("Location: index.php");
+      }    
+    }
     }else{
         form();
     }
