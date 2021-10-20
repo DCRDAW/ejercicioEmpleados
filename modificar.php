@@ -46,9 +46,9 @@
       $id= '"'.$_GET["id"].'"';
       $dni= '"'.$_POST["dni"].'"';
       $telef= '"'.$_POST["telef"].'"';
-      $consulta = 'insert into empleados values('.$dni.','.$nombre.','.$dni.','.$telef.')';
+      $consulta = 'insert into empleados values('.$id.','.$nombre.','.$dni.','.$telef.')';
       echo $consulta;
-      //$resultado = $mysqli->query($consulta);
+      $resultado = $mysqli->query($consulta);
       echo'<br /> 
         <form method="post" action=""> 
         <input type="submit" value="Volver al inicio" name="volver" >
