@@ -16,7 +16,7 @@
         <label>Telefono</label><br />
         <input type="tel" placeholder="Teléfono" name="telef" required><br /><br />
     
-        <button type="submit" name="envio">Registrar</button>
+        <input type="submit" name="envio">
     </form>';
     echo'<br /> 
         <form method="post" action=""> 
@@ -38,15 +38,15 @@
 <body>
 
 <?php
-    require 'clases.php';
+    require 'conexion.php';
 
     if(isset($_POST['envio'])){
-      $mysqli = new mysqli('localhost', 'root', '', 'empleados');
-      $nombre= '"'.$_POST["nombre"].'"';
-      $id= '"'.$_GET["id"].'"';
-      $dni= '"'.$_POST["dni"].'"';
-      $telef= '"'.$_POST["telef"].'"';
-      $consulta = 'insert into empleados values('.$id.','.$nombre.','.$dni.','.$telef.')';
+      $nombre= $_POST["nombre"];
+      $id= $_GET["id"];
+      $dni= $_POST["dni"];
+      $telef= $_POST["telef"];
+      $correo=$_POST["email"];
+      $consulta = 'update empleados set nombre="'.$nombre.'",dni="'.$dni.'",correo="'.$correo.'",telefono="'.$telef.'";';
       echo $consulta;
       $resultado = $mysqli->query($consulta);
       echo'<br /> 

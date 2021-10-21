@@ -3,8 +3,6 @@
         echo'<form method="post" action="" style="border:1px solid #ccc">
         <h1>Registre un empleado</h1>
         <p>Rellene este formulario para registrar el empleado.</p>
-        <label>IdEmpleado</label><br />
-        <input type="text" placeholder="Introduce el Id" name="ID" required><br />
 
         <label>Nombre</label><br />
         <input type="text" placeholder="Introduce el nombre" name="nombre" required><br />
@@ -18,7 +16,7 @@
         <label>Telefono</label><br />
         <input type="tel" placeholder="Teléfono" name="telef" required><br /><br />
     
-        <button type="submit" name="envio">Registrar</button>
+        <input type="submit" name="envio">
     </form>';
     echo'<br /> 
       <form method="post" action=""> 
@@ -40,14 +38,14 @@
 <body>
 
 <?php
-    require 'clases.php';
+    require 'conexion.php';
     if(isset($_POST['envio'])){
-      $mysqli = new mysqli('localhost', 'root', '', 'empleados');
+      
       $nombre= '"'.$_POST["nombre"].'"';
-      $id= '"'.$_POST["ID"].'"';
       $dni= '"'.$_POST["dni"].'"';
       $telef= '"'.$_POST["telef"].'"';
-      $consulta = 'insert into empleados values('.$id.','.$nombre.','.$dni.','.$telef.')';
+      $correo= '"'.$_POST["email"].'"';
+      $consulta = "insert into empleados(nombre,dni,correo,telefono) values(".$nombre.",".$dni.",".$correo.",".$telef.")";
       echo $consulta;
       $resultado = $mysqli->query($consulta);
         echo'<form  action="">

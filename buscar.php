@@ -15,7 +15,7 @@
         <label>Telefono</label><br />
         <input type="tel" placeholder="Teléfono" name="telef" required><br /><br />
     
-        <button type="submit" name="envio">Registrar</button>
+        <input type="submit" name="envio">
     </form>';
     echo'<br /> 
       <form method="post" action=""> 
@@ -38,7 +38,7 @@
 <body>
 
 <?php
-    require 'clases.php';
+    require 'conexion.php';
     if(isset($_POST['envio'])){
         
         echo'<form  action="">

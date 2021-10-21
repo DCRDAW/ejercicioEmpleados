@@ -8,8 +8,9 @@
 </head>
 <body>
     <h1>Listado de empleados</h1>
+    
 <?php
-    $mysqli = new mysqli('localhost', 'root', '', 'empleados');
+    require 'conexion.php';
     $consulta = 'SELECT * FROM empleados';
     //echo $consulta;
     $resultado = $mysqli->query($consulta);
@@ -19,8 +20,8 @@
         while($fila = $resultado->fetch_assoc()) {
         
         echo "id: " . $fila["idEmpleado"]. " - Nombre: " . $fila["nombre"]. " dni " . $fila["dni"]." - telefono: " . $fila["telefono"]; 
-        echo ' <a href="borrar.php ?id='.$fila["idEmpleado"].'">Borrar</a>';
-        echo ' <a href="modificar.php ?id='.$fila["idEmpleado"].'">modificar</a>';
+        echo ' <a href="modificar.php ?id='.$fila["idEmpleado"].'">Modificar</a>';
+        echo ' <a href="borrar.php ?id='.$fila["idEmpleado"].'"onclick="return confirm(`Are you sure you want to delete this item?`);">Borrar</a>';
         echo "<br>";
         }
       }

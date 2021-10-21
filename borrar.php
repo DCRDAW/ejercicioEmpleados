@@ -7,8 +7,13 @@
 	<link rel=stylesheet href=css/ejercicio1.css />
 </head>
 <body>
-<a href="url_to_delete" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+
 <?php
+  require 'conexion.php';
+  $id=$_GET["id"];
+  $consulta = 'delete from empleados where idEmpleado="'.$id.'"';
+  echo $consulta;
+  $resultado = $mysqli->query($consulta);
   echo'<br /> 
     <form method="post" action=""> 
     <input type="submit" value="Volver al inicio" name="volver" >
