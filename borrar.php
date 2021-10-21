@@ -1,28 +1,44 @@
- <!doctype html>
-<html lang=es>
-<head>
-	<meta charset=utf-8 />
-	<meta name=viewport content="width=device-width, initial-scale=1" />
-	<title>Introduccion de empleados</title>
-  <link rel=stylesheet href=estiloIndex.css />
-</head>
-<body>
-
-<?php
-  require 'conexion.php';
-  $id=$_GET["id"];
-  $consulta = 'delete from empleados where idEmpleado="'.$id.'"';
-  echo 'EMPLEADO BORRADO';
-  $resultado = $mysqli->query($consulta);
-  echo'<br /> 
-    <form method="post" action=""> 
-    <input type="submit" value="Volver al inicio" name="volver" >
-    </form>  ';
-    if(isset($_POST['volver'])){
-      header("Location: menuOpciones.php");
-    }    
-    
-  ?>
-</body>
-
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8" >
+        <title>Pagina empleados</title>
+        <link rel=stylesheet href=estilo.css />
+        
+    </head>
+    <body>
+       <header>
+           <h1>Aplicacion Empleados</h1>
+       </header>
+       <nav>
+            <h1>Borrar un empleado</h1>
+       </nav>
+       <div>
+            <aside>
+                <p>
+                     
+                </p>
+            </aside>
+            <article>
+            <?php
+              require 'conexion.php';
+              $id=$_GET["id"];
+              $consulta = 'delete from empleados where idEmpleado="'.$id.'"';
+              echo 'EMPLEADO BORRADO';
+              $resultado = $mysqli->query($consulta);
+              echo'<br /> 
+                <form method="post" action=""> 
+                <input type="submit" value="Volver al inicio" name="volver" >
+                </form>  ';
+                if(isset($_POST['volver'])){
+                  header("Location: menuOpciones.php");
+                }    
+                
+              ?>
+            </article> 
+       </div>
+       <footer></footer>
+    </body>
 </html>
+
+
