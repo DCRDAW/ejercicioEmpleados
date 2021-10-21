@@ -21,7 +21,7 @@
       <form method="post" action=""> 
         <input type="submit" value="Volver al inicio" name="volver" >
       </form>  ';
-      if(isset($_POST['volver'])){
+      if(isset($_POST['volver'])){ 
         header("Location: index.php");
       }    
     
