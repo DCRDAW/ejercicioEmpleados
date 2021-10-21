@@ -23,7 +23,7 @@
         <input type="submit" value="Volver al inicio" name="volver" >
         </form>  ';
       if(isset($_POST['volver'])){
-        header("Location: index.php");
+        header("Location: menuOpciones.php");
       }
     }
   ?>  
@@ -33,7 +33,7 @@
 	<meta charset=utf-8 />
 	<meta name=viewport content="width=device-width, initial-scale=1" />
 	<title>Modificar empleados</title>
-	<link rel=stylesheet href=css/ejercicio1.css />
+	<link rel=stylesheet href=estilointroducir.css />
 </head>
 <body>
 

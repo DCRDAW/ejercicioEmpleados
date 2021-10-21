@@ -4,7 +4,7 @@
 	<meta charset=utf-8 />
 	<meta name=viewport content="width=device-width, initial-scale=1" />
 	<title>Introduccion de empleados</title>
-	<link rel=stylesheet href=css/ejercicio1.css />
+  <link rel=stylesheet href=estiloIndex.css />
 </head>
 <body>
 
@@ -12,14 +12,14 @@
   require 'conexion.php';
   $id=$_GET["id"];
   $consulta = 'delete from empleados where idEmpleado="'.$id.'"';
-  echo $consulta;
+  echo 'EMPLEADO BORRADO';
   $resultado = $mysqli->query($consulta);
   echo'<br /> 
     <form method="post" action=""> 
     <input type="submit" value="Volver al inicio" name="volver" >
     </form>  ';
     if(isset($_POST['volver'])){
-      header("Location: index.php");
+      header("Location: menuOpciones.php");
     }    
     
   ?>

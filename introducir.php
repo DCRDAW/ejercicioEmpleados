@@ -16,14 +16,14 @@
         <label>Telefono</label><br />
         <input type="tel" placeholder="Teléfono" name="telef" required><br /><br />
     
-        <input type="submit" name="envio">
+        <input type="submit" id="enviar" name="envio">
     </form>';
     echo'<br /> 
       <form method="post" action=""> 
         <input type="submit" value="Inicio" name="volver" >
       </form>  ';
       if(isset($_POST['volver'])){
-        header("Location: index.php");
+        header("Location: menuOpciones.php");
       }    
     }
   ?>  
@@ -33,7 +33,7 @@
 	<meta charset=utf-8 />
 	<meta name=viewport content="width=device-width, initial-scale=1" />
 	<title>Introduccion de empleados</title>
-	<link rel=stylesheet href=css/ejercicio1.css />
+	<link rel=stylesheet href=estilointroducir.css />
 </head>
 <body>
 
@@ -45,11 +45,11 @@
       $dni= '"'.$_POST["dni"].'"';
       $telef= '"'.$_POST["telef"].'"';
       $correo= '"'.$_POST["email"].'"';
-      $consulta = "insert into empleados(nombre,dni,correo,telefono) values(".$nombre.",".$dni.",".$correo.",".$telef.")";
-      echo $consulta;
+      $consulta = "insert into empleados(nombre,dni,correo,telefono) values(".$nombre.",".$dni.",".$correo.",".$telef.")";      
+      echo 'empleado introducido correctamente';
       $resultado = $mysqli->query($consulta);
         echo'<form  action="">
-          <input type="submit" value="volver a buscar" onclick="window.location.reload()">
+          <input type="submit" value="volver a introducir" onclick="window.location.reload()">
           </form>';
     }else{
         form();
