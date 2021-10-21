@@ -22,7 +22,7 @@
             <article>
                 <?php
                     require 'conexion.php';
-                    $consulta = 'SELECT * FROM empleados';
+                    $consulta = 'SELECT * FROM Empleados';
                     //echo $consulta;
                     $resultado = $mysqli->query($consulta);
                     //$fila = $resultado ->fetch_array();

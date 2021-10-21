@@ -50,13 +50,13 @@
                   $termino=$_POST['termino'];
                   switch ($eleccion) {
                     case 'id':
-                      $consulta="select * from empleados where idEmpleado='".$termino."'";
+                      $consulta="select * from Empleados where idEmpleado='".$termino."'";
                       break;
                     case 'nombre':
-                      $consulta="select * from empleados where nombre='".$termino."'";
+                      $consulta="select * from Empleados where nombre='".$termino."'";
                       break;
                     case 'dni':
-                      $consulta="select * from empleados where dni='".$termino."'";
+                      $consulta="select * from Empleados where dni='".$termino."'";
                       break;
                     default:
                       echo'error';

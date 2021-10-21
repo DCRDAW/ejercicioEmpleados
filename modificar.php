@@ -58,7 +58,7 @@
                 $dni= $_POST["dni"];
                 $telef= $_POST["telef"];
                 $correo=$_POST["email"];
-                $consulta = 'update empleados set nombre="'.$nombre.'",dni="'.$dni.'",correo="'.$correo.'",telefono="'.$telef.'";';
+                $consulta = 'update Empleados set nombre="'.$nombre.'",dni="'.$dni.'",correo="'.$correo.'",telefono="'.$telef.'";';
                 echo $consulta;
                 $resultado = $mysqli->query($consulta);
                 echo'<br /> 

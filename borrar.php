@@ -23,7 +23,7 @@
             <?php
               require 'conexion.php';
               $id=$_GET["id"];
-              $consulta = 'delete from empleados where idEmpleado="'.$id.'"';
+              $consulta = 'delete from Empleados where idEmpleado="'.$id.'"';
               echo 'EMPLEADO BORRADO';
               $resultado = $mysqli->query($consulta);
               echo'<br /> 
