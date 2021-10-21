@@ -60,7 +60,6 @@
                 $correo= '"'.$_POST["email"].'"';
                 $consulta = "insert into Empleados(nombre,dni,correo,telefono) values(".$nombre.",".$dni.",".$correo.",".$telef.")";      
                 echo 'empleado introducido correctamente';
-                echo $consulta;
                 $resultado = $mysqli->query($consulta);
                   echo'<form  action="">
                     <input type="submit" value="volver a introducir" onclick="window.location.reload()">
