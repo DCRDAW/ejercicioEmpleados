@@ -26,41 +26,55 @@
         header("Location: menuOpciones.php");
       }
     }
-  ?>  
-<!doctype html>
-<html lang=es>
-<head>
-	<meta charset=utf-8 />
-	<meta name=viewport content="width=device-width, initial-scale=1" />
-	<title>Modificar empleados</title>
-	<link rel=stylesheet href=estilointroducir.css />
-</head>
-<body>
-
-<?php
-    require 'conexion.php';
-
-    if(isset($_POST['envio'])){
-      $nombre= $_POST["nombre"];
-      $id= $_GET["id"];
-      $dni= $_POST["dni"];
-      $telef= $_POST["telef"];
-      $correo=$_POST["email"];
-      $consulta = 'update empleados set nombre="'.$nombre.'",dni="'.$dni.'",correo="'.$correo.'",telefono="'.$telef.'";';
-      echo $consulta;
-      $resultado = $mysqli->query($consulta);
-      echo'<br /> 
-        <form method="post" action=""> 
-        <input type="submit" value="Volver al inicio" name="volver" >
-        </form>  ';
-      if(isset($_POST['volver'])){
-        header("Location: index.php");
-      }
-    
-    }else{
-        form();
-    }
   ?>
-</body>
+ <!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8" >
+        <title>Pagina empleados</title>
+        <link rel=stylesheet href=estiloIntroducir.css />
+        
+    </head>
+    <body>
+       <header>
+           <h1>Aplicacion Empleados</h1>
+       </header>
+       <nav>
+            <h1>Modificar los datos de un Empleado</h1>
+       </nav>
+       <div>
+            <aside>
+                <p>
+                     
+                </p>
+            </aside>
+            <article>
+            <?php
+              require 'conexion.php';
 
+              if(isset($_POST['envio'])){
+                $nombre= $_POST["nombre"];
+                $id= $_GET["id"];
+                $dni= $_POST["dni"];
+                $telef= $_POST["telef"];
+                $correo=$_POST["email"];
+                $consulta = 'update empleados set nombre="'.$nombre.'",dni="'.$dni.'",correo="'.$correo.'",telefono="'.$telef.'";';
+                echo $consulta;
+                $resultado = $mysqli->query($consulta);
+                echo'<br /> 
+                  <form method="post" action=""> 
+                  <input type="submit" value="Volver al inicio" name="volver" >
+                  </form>  ';
+                if(isset($_POST['volver'])){
+                  header("Location: index.php");
+                }
+              
+              }else{
+                  form();
+              }
+            ?>
+            </article> 
+       </div>
+       <footer></footer>
+    </body>
 </html>

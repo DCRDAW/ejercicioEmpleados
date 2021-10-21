@@ -20,49 +20,66 @@
       }    
     
     }
-  ?>  
-<!doctype html>
-<html lang=es>
-<head>
-	<meta charset=utf-8 />
-	<meta name=viewport content="width=device-width, initial-scale=1" />
-	<title>Introduccion de empleados</title>
-	<link rel=stylesheet href=estilointroducir.css />
-</head>
-<body>
-
-<?php
-    require 'conexion.php';
-    if(isset($_POST['envio'])){
-        $eleccion= $_POST['buscar'];
-        $termino=$_POST['termino'];
-        switch ($eleccion) {
-          case 'id':
-            $consulta="select * from empleados where idEmpleado='".$termino."'";
-            break;
-          case 'nombre':
-            $consulta="select * from empleados where nombre='".$termino."'";
-            break;
-          case 'dni':
-            $consulta="select * from empleados where dni='".$termino."'";
-            break;
-          default:
-            echo'error';
-            break;
-        }
-        $resultado = $mysqli->query($consulta);
-        if ($resultado->num_rows > 0) {   
-          while($fila = $resultado->fetch_assoc()) {
-            echo "id: " . $fila["idEmpleado"]. " - Nombre: " . $fila["nombre"]. " dni " . $fila["dni"]." - telefono: " . $fila["telefono"]; 
-          }
-        }
-        echo'<form  action="">
-            <input type="submit" value="volver a buscar" onclick="window.location.reload()">
-            </form>';
-    }else{
-        form();
-    }
   ?>
-</body>
-
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8" >
+        <title>Pagina empleados</title>
+        <link rel=stylesheet href=estiloIntroducir.css />
+        
+    </head>
+    <body>
+       <header>
+           <h1>Aplicacion Empleados</h1>
+       </header>
+       <nav>
+            <h1>Buscar un empleado</h1>
+       </nav>
+       <div>
+            <aside>
+                <p>
+                     
+                </p>
+            </aside>
+            <article>
+            <?php
+              require 'conexion.php';
+              if(isset($_POST['envio'])){
+                  $eleccion= $_POST['buscar'];
+                  $termino=$_POST['termino'];
+                  switch ($eleccion) {
+                    case 'id':
+                      $consulta="select * from empleados where idEmpleado='".$termino."'";
+                      break;
+                    case 'nombre':
+                      $consulta="select * from empleados where nombre='".$termino."'";
+                      break;
+                    case 'dni':
+                      $consulta="select * from empleados where dni='".$termino."'";
+                      break;
+                    default:
+                      echo'error';
+                      break;
+                  }
+                  $resultado = $mysqli->query($consulta);
+                  if ($resultado->num_rows > 0) {   
+                    while($fila = $resultado->fetch_assoc()) {
+                      echo "id: " . $fila["idEmpleado"]. " - Nombre: " . $fila["nombre"]. " dni " . $fila["dni"]." - telefono: " . $fila["telefono"]; 
+                    }
+                  }
+                  echo'<form  action="">
+                      <input type="submit" value="volver a buscar" onclick="window.location.reload()">
+                      </form>';
+              }else{
+                  form();
+              }
+            ?>
+            </article> 
+       </div>
+       <footer></footer>
+    </body>
 </html>
+
+
+
