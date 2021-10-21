@@ -20,7 +20,7 @@
     </form>';
     echo'<br /> 
       <form method="post" action=""> 
-        <input type="submit" value="Introducir Nuevo empleado" name="volver" >
+        <input type="submit" value="Inicio" name="volver" >
       </form>  ';
       if(isset($_POST['volver'])){
         header("Location: index.php");
